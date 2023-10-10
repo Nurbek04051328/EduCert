@@ -1,14 +1,22 @@
 const Router = require("express");
 const router = new Router();
 const auth = require('../middleware/auth');
-const { all, allActive, create, changeStatus, update, findOne, del } = require('../controllers/category');
+const { all, allActive, create, changeStatus, update, findOne, del, adminPanelAll, createPhoto, deleteImg } = require('../controllers/category');
+
+// Front
+router.get('/',   all);
 
 
-router.get('/', auth,  all);
+// AdminPanel
+router.post("/", auth, create);
+
+router.get('/all', auth,  adminPanelAll);
 
 router.get('/active', auth,  allActive);
 
-router.post("/", auth, create);
+router.post("/icon", createPhoto);
+
+router.post("/delicon", deleteImg);
 
 router.get("/change/:id", auth, changeStatus);
 

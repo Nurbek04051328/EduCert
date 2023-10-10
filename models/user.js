@@ -14,6 +14,8 @@ const User = new Schema({
         type: String,
         required: [true, "Заполните role"]
     },
+    name: String,
+    avatar: Array,
     loginAt: [Date],
     createdAt: Date,
     updatedAt:Date,

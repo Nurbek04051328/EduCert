@@ -19,7 +19,7 @@ const io = new Server(server, {
 
 
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3005;
 
 
 
@@ -45,17 +45,6 @@ app.use(cors());
 app.use(routerList);
 
 
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html');
-});
-
-
-io.on('connection', (socket) => {
-    console.log("socket",socket)
-    // socket.on('emit', data => {
-    //     socket.emit('emit', data)
-    // })
-})
 
 
 

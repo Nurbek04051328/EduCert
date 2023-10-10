@@ -1,21 +1,14 @@
 const {Schema, model} = require('mongoose')
 
 const  mentor = new Schema({
+    userId: String,
     user: {
         type:Schema.Types.ObjectId,
         ref:'User'
     },
-    name: {
-        type: String,
-        required: [true, "Заполните Имя"]
-    },
-    lname: {
-        type: String,
-        required: [true, "Заполните Фамилия"]
-    },
-    special: {
-        type: String,
-        required: [true, "Заполните специальность"]
+    specialty: {
+        type:Schema.Types.ObjectId,
+        ref:'Specialty'
     },
     phone: {
         type: String,

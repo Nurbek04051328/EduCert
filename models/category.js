@@ -1,12 +1,9 @@
 const {Schema, model} = require('mongoose')
 
 const category = new Schema({
-    title: {
-        type: String,
-        required: [true, "Заполните название"]
-    },
+    userId: String,
     icon: {
-        type: String,
+        type: Array,
     },
     createdAt: Date,
     updatedAt: Date,
