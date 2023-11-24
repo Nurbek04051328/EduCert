@@ -2,7 +2,7 @@ const News = require("../models/news");
 const kirilLotin = require("../service/kirilLotin");
 const mongoose = require("mongoose");
 const decoded = require("../service/decoded");
-
+const fs = require('fs')
 
 const all = async (req, res) => {
     let quantity = req.query.quantity || 20;

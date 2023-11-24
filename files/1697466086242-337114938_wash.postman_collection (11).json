@@ -1,0 +1,1581 @@
+{
+	"info": {
+		"_postman_id": "8ae904c3-39fb-4a6b-8e51-a7f0a5d9c3aa",
+		"name": "wash",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21661882",
+		"_collection_link": "https://crimson-rocket-666260.postman.co/workspace/wash~0e76ae0f-c241-4f58-b1d6-7292442ebe8a/collection/21661882-8ae904c3-39fb-4a6b-8e51-a7f0a5d9c3aa?action=share&source=collection_link&creator=21661882"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "add admin",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/auth/addadmin",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"addadmin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "phone",
+									"value": "+998 (99) 111-11-11",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/auth/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user verify",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/auth/verif",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"verif"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "language",
+			"item": [
+				{
+					"name": "all languages",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/language",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"language"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create language",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"O'zbek\",\r\n    \"slug\": \"uz\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/language",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"language"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change active",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/language/active/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"language",
+								"active",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "langauge _id"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/language/status/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"language",
+								"status",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "language _id"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get language",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/language/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"language",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "language _id"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit language",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"language _id\",\r\n    \"title\": \"String\",\r\n    \"slug\": \"String\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/language",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"language"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete langauge",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/language/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"language",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "language _id"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "car type",
+			"item": [
+				{
+					"name": "all car types",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/cartype",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cartype"
+							],
+							"query": [
+								{
+									"key": "next",
+									"value": "",
+									"description": "Number",
+									"disabled": true
+								},
+								{
+									"key": "title",
+									"value": "",
+									"description": "String",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create car type",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": true,\r\n    \"translates\": [\r\n        {\r\n            \"title\": \"Кабриолет\",\r\n            \"language\": \"ru\"\r\n        },\r\n        {\r\n            \"title\": \"Kabriolet\",\r\n            \"language\": \"uz\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/cartype",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cartype"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get car type",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/cartype/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cartype",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/cartype/status/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cartype",
+								"status",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit car type",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"651568eee67ff20d1bd47bf8\",\r\n    \"status\": false,\r\n    \"translates\": [\r\n        {\r\n            \"title\": \"String\",\r\n            \"language\": \"ru\"\r\n        },\r\n        {\r\n            \"title\": \"String\",\r\n            \"language\": \"uz\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/cartype",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cartype"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete car type",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/cartype/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cartype",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "651568eee67ff20d1bd47bf8"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Типы машин"
+		},
+		{
+			"name": "wash type",
+			"item": [
+				{
+					"name": "all wash types",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/washtype",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"washtype"
+							],
+							"query": [
+								{
+									"key": "next",
+									"value": null,
+									"description": "Number",
+									"disabled": true
+								},
+								{
+									"key": "title",
+									"value": "",
+									"description": "String",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create wash type",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": true,\r\n    \"translates\": [\r\n        {\r\n            \"title\": \"Сухая автомойка\",\r\n            \"language\": \"ru\"\r\n        },\r\n        {\r\n            \"title\": \"Quruq mashina yuvish\",\r\n            \"language\": \"uz\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/washtype",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"washtype"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get wash type",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/washtype/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"washtype",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/washtype/status/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"washtype",
+								"status",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit wash type",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"65156e7334a669a940215727\",\r\n    \"status\": true,\r\n    \"translates\": [\r\n        {\r\n            \"title\": \"String\",\r\n            \"language\": \"ru\"\r\n        },\r\n        {\r\n            \"title\": \"String\",\r\n            \"language\": \"uz\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/washtype",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"washtype"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete wash type",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/washtype/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"washtype",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "типы мойки"
+		},
+		{
+			"name": "branch",
+			"item": [
+				{
+					"name": "all branches",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/branch",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"branch"
+							],
+							"query": [
+								{
+									"key": "next",
+									"value": null,
+									"description": "Number",
+									"disabled": true
+								},
+								{
+									"key": "title",
+									"value": null,
+									"description": "String",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create branch",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phone\": \"+998 (99) 333-33-33\",\r\n    \"lat\": 123,\r\n    \"lon\": 123,\r\n    \"loc\": \"https://yandex.uz/maps/org/university_of_management_and_future_technologies/142141214367/?ll=69.161055%2C41.261924&utm_source=share&z=15\",\r\n    \"status\": true,\r\n    \"translates\": [\r\n        {\r\n            \"title\": \"УМФТ\",\r\n            \"workTime\": \"с 5 до 7 по будням\",\r\n            \"language\": \"ru\",\r\n            \"address\": \"String\"\r\n        },\r\n        {\r\n            \"title\": \"UMFT\",\r\n            \"workTime\": \"с 5 до 7 по будням\",\r\n            \"language\": \"uz\",\r\n            \"address\": \"String\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/branch",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"branch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get branch",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/branch/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"branch",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/branch/status/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"branch",
+								"status",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit branch",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"65165820c76a4217c5f6cfea\",\r\n    \"phone\": \"+998 (99) 222-22-22\",\r\n    \"lat\": 123,\r\n    \"lon\": 123,\r\n    \"loc\": \"https://yandex.uz/maps/org/university_of_management_and_future_technologies/142141214367/?ll=69.161055%2C41.261924&utm_source=share&z=15\",\r\n    \"status\": true,\r\n    \"translates\": [\r\n        {\r\n            \"title\": \"УМФТ\",\r\n            \"workTime\": \"с 5 до 7 по будням\",\r\n            \"language\": \"ru\",\r\n            \"address\": \"String\"\r\n        },\r\n        {\r\n            \"title\": \"UMFT\",\r\n            \"workTime\": \"с 5 до 7 по будням\",\r\n            \"language\": \"uz\",\r\n            \"address\": \"String\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/branch",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"branch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete branch",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/branch/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"branch",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Филиалы"
+		},
+		{
+			"name": "worker",
+			"item": [
+				{
+					"name": "all workers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/worker",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"worker"
+							],
+							"query": [
+								{
+									"key": "next",
+									"value": null,
+									"description": "Number",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": null,
+									"description": "String",
+									"disabled": true
+								},
+								{
+									"key": "lname",
+									"value": null,
+									"description": "String",
+									"disabled": true
+								},
+								{
+									"key": "role",
+									"value": null,
+									"description": "String",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create worker",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Diyar",
+									"description": "String",
+									"type": "text"
+								},
+								{
+									"key": "lname",
+									"value": "Yeg'laboyev",
+									"description": "String",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "+998 (94) 122-33-66",
+									"description": "String \"+998 (99) 123-45-67\"",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345",
+									"description": "String",
+									"type": "text"
+								},
+								{
+									"key": "avatar",
+									"value": "daad.png",
+									"description": "[{ url: \"path\" }]",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "worker",
+									"description": "String [boss, manager, worker]",
+									"type": "text"
+								},
+								{
+									"key": "branch",
+									"value": "651fae3518b48837154fa490",
+									"description": "branch _id",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/worker",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"worker"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get worker",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/worker/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"worker",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIwNzluOTk5LVM2NjYwIiwibmFtZSI6IkFkbWluYmVrIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjk2NDgwNzc1LCJleHAiOjE2OTkwNzI3NzV9.eK5I7hLJ_g_HyGFfO1ytneDNiV9WRAUzWiTs-Iln78Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/worker/status/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"worker",
+								"status",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit worker",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_id",
+									"value": "",
+									"description": "user _id",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "",
+									"description": "String",
+									"type": "text"
+								},
+								{
+									"key": "lname",
+									"value": "",
+									"description": "String",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "",
+									"description": "String \"+998 (99) 123-45-67\"",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "",
+									"description": "String",
+									"type": "text"
+								},
+								{
+									"key": "avatar",
+									"value": "",
+									"description": "[{ url: \"path\" }]",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "",
+									"description": "String [boss, manager, worker]",
+									"type": "text"
+								},
+								{
+									"key": "branch",
+									"value": "",
+									"description": "branch _id",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/worker",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"worker"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete worker",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/worker/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"worker",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "РАБотники"
+		},
+		{
+			"name": "helpers",
+			"item": [
+				{
+					"name": "upload image",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/helper/upload",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"helper",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIwNzluOTk5LVM2NjYwIiwibmFtZSI6IkFkbWluYmVrIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjk2NDgwNzc1LCJleHAiOjE2OTkwNzI3NzV9.eK5I7hLJ_g_HyGFfO1ytneDNiV9WRAUzWiTs-Iln78Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/helper/remove",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"helper",
+								"remove"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "price",
+			"item": [
+				{
+					"name": "all prices",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/price",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"price"
+							],
+							"query": [
+								{
+									"key": "next",
+									"value": null,
+									"description": "Number",
+									"disabled": true
+								},
+								{
+									"key": "carType",
+									"value": null,
+									"description": "carType _id",
+									"disabled": true
+								},
+								{
+									"key": "washType",
+									"value": null,
+									"description": "String",
+									"disabled": true
+								},
+								{
+									"key": "branch",
+									"value": null,
+									"description": "\"for Boss\" (send branch _id)",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create price",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"datas\": [\r\n        {\r\n            \"carType\": \"carType _id\",\r\n            \"branch\": \"if boss the boss creates price, the boss must choose a branch (_id)\",\r\n            \"washType\": \"_id\",\r\n            \"price\": 123\r\n        },\r\n        {\r\n            \"carType\": \"carType _id\",\r\n            \"branch\": \"if boss the boss creates price, the boss must choose a branch (_id)\",\r\n            \"washType\": \"_id\",\r\n            \"price\": 123\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/price",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"price"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get price",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/price/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"price",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "price _id"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/price/status/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"price",
+								"status",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "price _id"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit price",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"price _id\",\r\n    \"carType\": \"carType _id\",\r\n    \"branch\": \"if boss the boss creates price, the boss must choose a branch (_id)\",\r\n    \"datas\": [\r\n        {\r\n            \"washType\": \"_id\",\r\n            \"price\": 123\r\n        },\r\n        {\r\n            \"washType\": \"_id\",\r\n            \"price\": 123\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete price",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "price _id"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "ценники"
+		}
+	]
+}

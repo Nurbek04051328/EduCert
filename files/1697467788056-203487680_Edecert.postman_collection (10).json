@@ -1,0 +1,3215 @@
+{
+	"info": {
+		"_postman_id": "0c88d994-cffb-4943-91b9-131ab728c446",
+		"name": "Edecert",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20109438",
+		"_collection_link": "https://speeding-astronaut-725156.postman.co/workspace/My-Workspace~b35a0bb4-91f6-42f0-8153-764daf1745f8/collection/20109438-0c88d994-cffb-4943-91b9-131ab728c446?action=share&source=collection_link&creator=20109438"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "AddAdmin",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://95.130.227.52:3005/auth/login/addadmin",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"auth",
+								"login",
+								"addadmin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"login\": \"admin\",\r\n    \"password\": \"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://95.130.227.52:3005/auth/login",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CheckLogin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"login\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://95.130.227.52:3005/auth/checklogin",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"auth",
+								"checklogin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CheckUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://95.130.227.52:3005/auth/checkuser",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"auth",
+								"checkuser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"login\": \"abdulla\",\r\n    \"password\": \"12345\",\r\n    \"name\": \"Abdullajon\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://95.130.227.52:3005/auth/reg",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"auth",
+								"reg"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "CreateAvatar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/user/Pictures/Фоновые изображения рабочего стола/4. Кот с наушниками.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://95.130.227.52:3005/user/avatar",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"user",
+								"avatar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteAvatar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"file\": \"files/avatar/1696487398609-425328475_4. Кот с наушниками.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://95.130.227.52:3005/user/delavatar",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"user",
+								"delavatar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"login\": \"Sadulla\",\r\n    \"password\": \"12345\",\r\n    \"name\": \"Sadullabek\",\r\n    \"avatar\": \"files/avatar/1696488473129-372306087_4. Кот с наушниками.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://95.130.227.52:3005/user/",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://95.130.227.52:3005/user",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ChangeStatus",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://95.130.227.52:3005/user/change/651e5c34059971d4068d0426",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"user",
+								"change",
+								"651e5c34059971d4068d0426"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FindOne",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://95.130.227.52:3005/user/651e5c34059971d4068d0426",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"user",
+								"651e5c34059971d4068d0426"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"651e5c34059971d4068d0426\",\r\n    \"login\": \"Sadullajon\",\r\n    \"password\": \"12345\",\r\n    \"name\": \"Sadullabekjon\",\r\n    \"avatar\": \"files/avatar/1696488473129-372306087_4. Кот с наушниками.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://95.130.227.52:3005/user/651e5c34059971d4068d0426",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"user",
+								"651e5c34059971d4068d0426"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://95.130.227.52:3005/user/651e5c34059971d4068d0426",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"user",
+								"651e5c34059971d4068d0426"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "GetFrontAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://95.130.227.52:3005/category?language=en&login=user&quantity=1",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"category"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								},
+								{
+									"key": "login",
+									"value": "user"
+								},
+								{
+									"key": "quantity",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"icon\": \"\",\r\n    \"categories\": [\r\n        {\r\n            \"title\": \"Test\",\r\n            \"language\": \"uz\"\r\n        },\r\n        {\r\n            \"title\": \"TestRus\",\r\n            \"language\": \"ru\"\r\n        },\r\n        {\r\n            \"title\": \"Testengl\",\r\n            \"language\": \"en\"\r\n        }\r\n    ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://95.130.227.52:3005/category?language=en",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"category"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "language",
+								"value": "\"ru\"",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://95.130.227.52:3005/category/all?title=dasturlash&next=1&quantity=2",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"category",
+								"all"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "dasturlash"
+								},
+								{
+									"key": "next",
+									"value": "1"
+								},
+								{
+									"key": "quantity",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ChangeStatus",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://95.130.227.52:3005/category/change/651ebd9ee4737ce1e4e96a5a",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"category",
+								"change",
+								"651ebd9ee4737ce1e4e96a5a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Active",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://95.130.227.52:3005/category/active?language=ru",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"category",
+								"active"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "ru"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FindOne",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://95.130.227.52:3005/category/650c3d703246265fd8e2fa38",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"category",
+								"650c3d703246265fd8e2fa38"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"650c3d703246265fd8e2fa38\",\r\n    \"icon\": \"\",\r\n    \"categories\": [\r\n        {\r\n            \"_id\": \"650c3d703246265fd8e2fa3a\",\r\n            \"title\": \"Grafik dizayn\",\r\n            \"language\": \"uz\"\r\n        },\r\n        {\r\n            \"_id\": \"650c3d703246265fd8e2fa3b\",\r\n            \"title\": \"Графический дизайн\",\r\n            \"language\": \"ru\"\r\n        },\r\n        {\r\n            \"_id\": \"650c3d703246265fd8e2fa3c\",\r\n            \"title\": \"Graphic design\",\r\n            \"language\": \"en\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://95.130.227.52:3005/category?language=en",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"category"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://95.130.227.52:3005/category/650c4f2a2a294873d011e14e",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"category",
+								"650c4f2a2a294873d011e14e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateIcon",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{hospitaltoken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/user/Desktop/educert/photo/biznes.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://95.130.227.52:3005/category/icon",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"category",
+								"icon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteIcon",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{hospitaltoken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"file\": \"files/icon/1695908825824-389346646_biznes.png\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://95.130.227.52:3005/category/delicon",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"category",
+								"delicon"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Degree",
+			"item": [
+				{
+					"name": "Add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"degrees\": [\r\n        {\r\n            \"title\": \"Boshlangich\",\r\n            \"language\": \"uz\"\r\n        },\r\n        {\r\n            \"title\": \"Начальный\",\r\n            \"language\": \"ru\"\r\n        },\r\n        {\r\n            \"title\": \"Start\",\r\n            \"language\": \"en\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://95.130.227.52:3005/degree",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"degree"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetFrontAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://95.130.227.52:3005/degree",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"degree"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "ru",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GettAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://95.130.227.52:3005/degree/all",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"degree",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Active",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://95.130.227.52:3005/degree/active",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"degree",
+								"active"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FindOne",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://95.130.227.52:3005/degree/6523f8134bdddf642c6ea0d4",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"degree",
+								"6523f8134bdddf642c6ea0d4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"6523f8134bdddf642c6ea0d4\",\r\n    \"degrees\": [\r\n        {\r\n            \"_id\": \"6523f8134bdddf642c6ea0d6\",\r\n            \"title\": \"Boshlang'ich\",\r\n            \"language\": \"uz\"\r\n        },\r\n        {\r\n            \"_id\": \"6523f8134bdddf642c6ea0d7\",\r\n            \"title\": \"Начальный\",\r\n            \"language\": \"ru\"\r\n        },\r\n        {\r\n            \"_id\": \"6523f8134bdddf642c6ea0d8\",\r\n            \"title\": \"Start\",\r\n            \"language\": \"en\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://95.130.227.52:3005/degree",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"degree"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ChangeStatus",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://95.130.227.52:3005/degree/change/6523f8134bdddf642c6ea0d4",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"degree",
+								"change",
+								"6523f8134bdddf642c6ea0d4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://95.130.227.52:3005/degree/6523f8134bdddf642c6ea0d4",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"degree",
+								"6523f8134bdddf642c6ea0d4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Specialty",
+			"item": [
+				{
+					"name": "Add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"specialties\": [\r\n        {\r\n            \"title\": \"Backend dasturchi\",\r\n            \"language\": \"uz\"\r\n        },\r\n        {\r\n            \"title\": \"Бэкэнд-разработчик\",\r\n            \"language\": \"ru\"\r\n        },\r\n        {\r\n            \"title\": \"Backend developer\",\r\n            \"language\": \"en\"\r\n        }\r\n    ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://95.130.227.52:3005/specialty?language=ru",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"specialty"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "ru"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://95.130.227.52:3005/specialty",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"specialty"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ChangeStatus",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://95.130.227.52:3005/specialty/change/6511343bcad1d45b0befd536?language=uz",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"specialty",
+								"change",
+								"6511343bcad1d45b0befd536"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "uz"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Active",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://95.130.227.52:3005/specialty/active",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"specialty",
+								"active"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FindOne",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://95.130.227.52:3005/specialty/6511343bcad1d45b0befd536",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"specialty",
+								"6511343bcad1d45b0befd536"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"6511343bcad1d45b0befd536\",\r\n    \"specialties\": [\r\n        {\r\n            \"_id\": \"6511343bcad1d45b0befd538\",\r\n            \"specId\": \"6511343bcad1d45b0befd536\",\r\n            \"title\": \"Backend dasturchi\",\r\n            \"language\": \"uz\"\r\n        },\r\n        {\r\n            \"_id\": \"6511343bcad1d45b0befd539\",\r\n            \"specId\": \"6511343bcad1d45b0befd536\",\r\n            \"title\": \"Бэкэнд-разработчик\",\r\n            \"language\": \"ru\"\r\n        },\r\n        {\r\n            \"_id\": \"6511343bcad1d45b0befd53a\",\r\n            \"specId\": \"6511343bcad1d45b0befd536\",\r\n            \"title\": \"Backend developer\",\r\n            \"language\": \"en\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://95.130.227.52:3005/specialty?language=ru",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"specialty"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "ru"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://95.130.227.52:3005/specialty/65113402cad1d45b0befd52c",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"specialty",
+								"65113402cad1d45b0befd52c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetFrontAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://95.130.227.52:3005/specialty?quantity=1&login=admin",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"specialty"
+							],
+							"query": [
+								{
+									"key": "quantity",
+									"value": "1"
+								},
+								{
+									"key": "login",
+									"value": "admin"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Mentor",
+			"item": [
+				{
+					"name": "CreateAvatar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{hospitaltoken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/user/Desktop/educert/photo/fotografiya.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://95.130.227.52:3005/mentor/avatar",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"mentor",
+								"avatar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteAvatar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{hospitaltoken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"file\": \"files/avatar/1695911487622-91901023_fotografiya.png\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://95.130.227.52:3005/mentor/delavatar",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"mentor",
+								"delavatar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"login\": \"teacher\",\r\n    \"password\": \"12345\",\r\n    \"name\": \"Аsadulla\",\r\n    \"lname\": \"Gaybullaev\",\r\n    \"phone\": \"+99(899) 123-45-67\",\r\n    \"telegram\": \"@abdulla\",\r\n    \"specialty\": \"651ec39457e5d4a06fee0046\",\r\n    \"avatar\": [\"files/avatar/1696849251576-502970805_photo_2023-06-28_15-21-36.jpg\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://95.130.227.52:3005/mentor",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"mentor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://95.130.227.52:3005/mentor",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"mentor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ChangeStatus",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://95.130.227.52:3005/mentor/change/651ab2ed208569e832d80268",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"mentor",
+								"change",
+								"651ab2ed208569e832d80268"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Active",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://95.130.227.52:3005/mentor/active",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"mentor",
+								"active"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FindOne",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://95.130.227.52:3005/mentor/651ab2ed208569e832d80268",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"mentor",
+								"651ab2ed208569e832d80268"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"651ab2ed208569e832d80268\",\r\n    \"login\": \"teacher2\",\r\n    \"password\": \"12345\",\r\n    \"phone\": \"+99(899) 123-45-67\",\r\n    \"telegram\": \"@abdulla\",\r\n    \"specialty\": \"65118728d7915528a0f0ce04\",\r\n    \"avatar\": \"files/avatar/1695911593367-167729594_fotografiya.png\",\r\n    \"mentors\": [\r\n        {\r\n            \"_id\": \"651ab2ed208569e832d8026a\",\r\n            \"name\": \"Аsadulla\",\r\n            \"lname\": \"Gaybullayev\",\r\n            \"language\": \"uz\"\r\n        },\r\n        {\r\n            \"_id\": \"651ab2ed208569e832d8026b\",\r\n            \"name\": \"Асадулла\",\r\n            \"lname\": \"Гайбуллайэв\",\r\n            \"language\": \"ru\"\r\n        },\r\n        {\r\n            \"_id\": \"651ab2ed208569e832d8026c\",\r\n            \"name\": \"Аsadulla\",\r\n            \"lname\": \"Gaybullayev\",\r\n            \"language\": \"en\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://95.130.227.52:3005/mentor/",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"mentor",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://95.130.227.52:3005/mentor/6523ea1675992135fb3f051d",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"mentor",
+								"6523ea1675992135fb3f051d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetFrontAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://95.130.227.52:3005/mentor",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"mentor"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "uz",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "News",
+			"item": [
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://95.130.227.52:3005/news/651ec094636694d58d9e8613",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"news",
+								"651ec094636694d58d9e8613"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ChangeStatus",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://95.130.227.52:3005/news/change/651ec094636694d58d9e8613",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"news",
+								"change",
+								"651ec094636694d58d9e8613"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FindOne",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://95.130.227.52:3005/news/651ec094636694d58d9e8613",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"news",
+								"651ec094636694d58d9e8613"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://95.130.227.52:3005/news",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"news"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"651ec094636694d58d9e8613\",\r\n    \"title\": \"Yangi yangilik qushildi uzgardi\",\r\n    \"text\": \"dsfrftedsfgvdfxcvxcvxc\", \r\n    \"img\": \"files/img/1696513992705-102233617_11. Закат.jpg\",\r\n    \"language\": \"uz\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://95.130.227.52:3005/news",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"news"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Yangi yangilik qushildi\",\r\n    \"text\": \"dsfrftedsfgvdfxcvxcvxc\", \r\n    \"img\": \"files/img/1696513992705-102233617_11. Закат.jpg\",\r\n    \"language\": \"uz\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://95.130.227.52:3005/news",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"news"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DelImg",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"file\": \"files/img/1696513992705-102233617_11. Закат.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://95.130.227.52:3005/news/delimg",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"news",
+								"delimg"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateImg",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/user/Pictures/Фоновые изображения рабочего стола/11. Закат.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://95.130.227.52:3005/news/img",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"news",
+								"img"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Course",
+			"item": [
+				{
+					"name": "CreateImg",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "file",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/user/Desktop/IMG_2241.JPG"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://95.130.227.52:3005/files",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"files"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DelImg",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"file\": \"files/1697453280512-729045007_IMG_2241.JPG\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://95.130.227.52:3005/files/del",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"files",
+								"del"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Reactcha Frontend Dasturchi -0 dan Ekspert gacha\",\r\n    \"desc\": \"Kursda React freymvorkida UI interfeyslar yaratish hamda logistik hisob-kitobli tizimlarni yasashni o’rganasiz\",\r\n    \"text\": \"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.\",\r\n    \"learn\": \"-HTML teglari bilan ishlash -CSS qoidalari \",\r\n    \"request\": \"Talablar\",\r\n    \"degree\": \"6523f8134bdddf642c6ea0d4\",\r\n    \"language\": \"uz\",\r\n    \"category\": \"651ebd9ee4737ce1e4e96a5a\",\r\n    \"mentor\":\"6524042c25e5c06343be75d5\",\r\n    \"price\": 900000,\r\n    \"img\":[]\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://95.130.227.52:3005/course/",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"course",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://95.130.227.52:3005/course/all",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"course",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"6527d4f69d7deee82b595aab\",\r\n    \"title\": \"React Frontend Dasturchi -0 dan Ekspert gacha\",\r\n    \"desc\": \"Kursda react jssss freymvorkida UI interfeyslar yaratish hamda logistik hisob-kitobli tizimlarni yasashni o’rganasiz\",\r\n    \"text\": \"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.\",\r\n    \"learn\": \"-HTML teglari bilan ishlash -CSS qoidalari \",\r\n    \"request\": \"Talablar kopda\",\r\n    \"degree\": \"6523f8134bdddf642c6ea0d4\",\r\n    \"language\": \"uz\",\r\n    \"category\": \"651ebd9ee4737ce1e4e96a5a\",\r\n    \"mentor\":\"6524042c25e5c06343be75d5\",\r\n    \"price\": 900000,\r\n    \"img\":[]\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://95.130.227.52:3005/course/",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"course",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FindOne",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://95.130.227.52:3005/course/6527d4f69d7deee82b595aab",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"course",
+								"6527d4f69d7deee82b595aab"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://95.130.227.52:3005/course/6527d11a5d47003552cf4fe8",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"course",
+								"6527d11a5d47003552cf4fe8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ChangeStatus",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://95.130.227.52:3005/course/change/652546c9b8c792d80ecacdd3",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"course",
+								"change",
+								"652546c9b8c792d80ecacdd3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Active",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://95.130.227.52:3005/course/active",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"course",
+								"active"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetFrontAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://95.130.227.52:3005/course?language=ru",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"course"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "ru"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Part",
+			"item": [
+				{
+					"name": "Add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"courseId\": \"652d166994ef039bd4fd160b\",\r\n    \"title\": \"Test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://95.130.227.52:3005/part",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"part"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://95.130.227.52:3005/part/all",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"part",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"6527eeec2ce36bd25e2a1cc0\",\r\n    \"courseId\": \"652d166994ef039bd4fd160b\",\r\n    \"title\": \"Testuzgar\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://95.130.227.52:3005/part/",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"part",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FindOne",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://95.130.227.52:3005/part/652d2353cd42ea6e0dfeb094",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"part",
+								"652d2353cd42ea6e0dfeb094"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://95.130.227.52:3005/part/6527eeec2ce36bd25e2a1cc0",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"part",
+								"6527eeec2ce36bd25e2a1cc0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ChangeStatus",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://95.130.227.52:3005/part/change/652d2353cd42ea6e0dfeb094",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"part",
+								"change",
+								"652d2353cd42ea6e0dfeb094"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Active",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://95.130.227.52:3005/part/active",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"part",
+								"active"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetFrontAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://95.130.227.52:3005/part/",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"part",
+								""
+							],
+							"query": [
+								{
+									"key": "course",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Chapter",
+			"item": [
+				{
+					"name": "Add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"partId\": \"652d2353cd42ea6e0dfeb094\",\r\n    \"title\": \"Test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://95.130.227.52:3005/chapter",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"chapter"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://95.130.227.52:3005/chapter/all",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"chapter",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"652d2fcc878f929981df38c7\",\r\n    \"partId\": \"652d2353cd42ea6e0dfeb094\",\r\n    \"title\": \"TestUpdate\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://95.130.227.52:3005/chapter",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"chapter"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FindOne",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://95.130.227.52:3005/chapter/652d2fcc878f929981df38c7",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"chapter",
+								"652d2fcc878f929981df38c7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ChangeStatus",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://95.130.227.52:3005/chapter/change/652d2fcc878f929981df38c7",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"chapter",
+								"change",
+								"652d2fcc878f929981df38c7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Active",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://95.130.227.52:3005/chapter/active",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"chapter",
+								"active"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://95.130.227.52:3005/chapter/652d2fcc878f929981df38c7",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"chapter",
+								"652d2fcc878f929981df38c7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllFront",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://95.130.227.52:3005/chapter/",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"chapter",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Files",
+			"item": [
+				{
+					"name": "Upload",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/user/Desktop/IMG_2241.JPG"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://95.130.227.52:3005/files",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"files"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{educert}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"file\": \"files/1697454227737-610348551_IMG_2241.JPG\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://95.130.227.52:3005/files/del",
+							"protocol": "http",
+							"host": [
+								"95",
+								"130",
+								"227",
+								"52"
+							],
+							"port": "3005",
+							"path": [
+								"files",
+								"del"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
